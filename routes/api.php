@@ -33,5 +33,5 @@ Route::get('horarios', [HorariosController::class, 'obtenerDatos']);
 
 Route::get('pp', [HorariosController::class, 'obtenerPP']);
 
-Route::post('store', [HorariosController::class, 'crearHorario']);
+Route::get('crearHorario', [HorariosController::class, 'crearHorario']);
 

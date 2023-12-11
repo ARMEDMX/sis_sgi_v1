@@ -37,16 +37,17 @@ class HorariosController extends Controller
     
     public function crearHorario(Request $request) {
         // Valida y crea el horario
-
-          
-        dd($request->all()); 
+        dd($request->all());
 
         $validatedData = $request->validate([
             'fecha' => 'required',
             'personals_id' => 'required',
             'periodos_id' => 'required',
             // Agrega otras validaciones si es necesario
+            
         ]);
+
+
       
         $horario = Horarios::create($validatedData);
 
@@ -73,28 +74,28 @@ class HorariosController extends Controller
     
     
 
-    public function guardarHorarios(Request $request)
-{
-    try {
-        $data = $request->all();
+//     public function guardarHorarios(Request $request)
+// {
+//     try {
+//         $data = $request->all();
 
-        $horario = new Horarios();
-        $horario->personal_id = $data['personal']; // Asegúrate de que la clave sea correcta
-        $horario->periodos_id = $data['periodos']; // Asegúrate de que la clave sea correcta
-        $horario->fecha = $data['fecha'];
+//         $horario = new Horarios();
+//         $horario->personal_id = $data['personal']; // Asegúrate de que la clave sea correcta
+//         $horario->periodos_id = $data['periodos']; // Asegúrate de que la clave sea correcta
+//         $horario->fecha = $data['fecha'];
 
-        // Guardar el horario
-        $horario->save();
+//         // Guardar el horario
+//         $horario->save();
 
-        // Obtener los datos de personal y periodos a partir de las relaciones
-        $personal = $horario->personal; // Accede a la relación en el modelo Horarios
-        $periodos = $horario->periodos; // Accede a la relación en el modelo Horarios
+//         // Obtener los datos de personal y periodos a partir de las relaciones
+//         $personal = $horario->personal; // Accede a la relación en el modelo Horarios
+//         $periodos = $horario->periodos; // Accede a la relación en el modelo Horarios
 
-        return response()->json(['message' => 'Horario agregado correctamente', 'personal' => $personal, 'periodos' => $periodos]);
-    } catch (\Exception $e) {
-        return response()->json(['message' => 'Error al agregar el horario: ' . $e->getMessage()], 500);
-    }
-}
+//         return response()->json(['message' => 'Horario agregado correctamente', 'personal' => $personal, 'periodos' => $periodos]);
+//     } catch (\Exception $e) {
+//         return response()->json(['message' => 'Error al agregar el horario: ' . $e->getMessage()], 500);
+//     }
+// }
 
 
 
