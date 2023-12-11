@@ -1,0 +1,30 @@
+.tools{
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+/* #table{
+    padding: 20px;
+    height: 350px;
+    width: 80%;
+}
+
+.accion-btn  {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    border: 1px solid red;
+}
+
+.table-data {
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} */
+
+
+
+
+
